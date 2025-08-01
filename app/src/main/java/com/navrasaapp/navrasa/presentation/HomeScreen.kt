@@ -204,7 +204,7 @@ fun BottomNavigationBar(items: List<BottomNavBar>) {
                 icon = {
                     Image(
                         painter = rememberAsyncImagePainter(model = item.iconRes),
-                        contentDescription = item.label, // still good for accessibility
+                        contentDescription = item.label,
                         modifier = Modifier.size(28.dp)
                     )
                 },

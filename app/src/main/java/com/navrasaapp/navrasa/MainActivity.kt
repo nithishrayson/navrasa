@@ -4,7 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.navrasaapp.navrasa.presentation.HomeScreen
+import com.navrasaapp.navrasa.presentation.PlaybackScreen
+import com.navrasaapp.navrasa.models.Track
 import com.navrasaapp.navrasa.ui.theme.NavrasaTheme
 
 class MainActivity : ComponentActivity() {
@@ -13,7 +14,14 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             NavrasaTheme {
-                HomeScreen()
+                val sampleTrack = Track(
+                    title = "Lovely",
+                    artist = "Billie Eilish & Khalid",
+                    imageRes = R.drawable.track3,     // used if you display a small icon
+                    albumArtRes = R.drawable.track3,   // used for central artwork
+                    listeners = "155M listeners"
+                )
+                PlaybackScreen(track = sampleTrack)
             }
         }
     }
